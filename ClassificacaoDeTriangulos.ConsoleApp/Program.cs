@@ -11,14 +11,40 @@ internal class Program
             Console.WriteLine("Classificador de Triângulos");
             Console.WriteLine("-------------------------------------------\n");
 
-            Console.Write("Informe o valor do lado X: ");
-            int ladoX = Convert.ToInt32(Console.ReadLine());
-            
-            Console.Write("Informe o valor do lado Y: ");
-            int ladoY = Convert.ToInt32(Console.ReadLine());
+            int ladoX;
+            int ladoY;
+            int ladoZ;
 
-            Console.Write("Informe o valor do lado Z: ");
-            int ladoZ = Convert.ToInt32(Console.ReadLine());
+            while (true)
+            {
+                Console.Write("Informe o valor do lado X: ");
+
+                bool conseguiuConverter = int.TryParse(Console.ReadLine(), out ladoX);
+
+                if (conseguiuConverter)
+                    break;
+            }
+
+            while (true)
+            {
+                Console.Write("Informe o valor do lado Y: ");
+
+                bool conseguiuConverter = int.TryParse(Console.ReadLine(), out ladoY);
+
+                if (conseguiuConverter)
+                    break;
+            }
+
+            while (true)
+            {
+                Console.Write("Informe o valor do lado Z: ");
+
+                bool conseguiuConverter = int.TryParse(Console.ReadLine(), out ladoZ);
+
+                if (conseguiuConverter)
+                    break;
+            }
+
 
             Console.WriteLine("\n-------------------------------------------");
             Console.WriteLine("Valores Informados: ");
