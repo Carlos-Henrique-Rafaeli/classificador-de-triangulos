@@ -33,7 +33,20 @@ internal class Program
                 ladoY + ladoZ > ladoX;
 
             if (medidasTriangulosValida)
-                Console.WriteLine("O triângulo é válido!");
+            {
+                string tipoTriângulo = "Não classificado";
+
+                if (ladoX == ladoY && ladoY == ladoZ)
+                    tipoTriângulo = "Equilátero";
+
+                else if (ladoX != ladoY && ladoY != ladoZ && ladoX != ladoZ)
+                    tipoTriângulo = "Escaleno";
+
+                else
+                    tipoTriângulo = "Isóceles";
+
+                Console.WriteLine($"O triângulo é {tipoTriângulo}!");
+            }
             else
                 Console.WriteLine("Os valores informados não formam um triângulo válido!");
 
