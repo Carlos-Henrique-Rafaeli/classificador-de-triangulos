@@ -9,7 +9,7 @@ internal class Program
             Console.Clear();
             Console.WriteLine("-------------------------------------------");
             Console.WriteLine("Classificador de Triângulos");
-            Console.WriteLine("-------------------------------------------");
+            Console.WriteLine("-------------------------------------------\n");
 
             Console.Write("Informe o valor do lado X: ");
             int ladoX = Convert.ToInt32(Console.ReadLine());
@@ -20,14 +20,25 @@ internal class Program
             Console.Write("Informe o valor do lado Z: ");
             int ladoZ = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("-------------------------------------------");
+            Console.WriteLine("\n-------------------------------------------");
             Console.WriteLine("Valores Informados: ");
             Console.WriteLine("Lado X: " + ladoX);
             Console.WriteLine("Lado Y: " + ladoY);
             Console.WriteLine("Lado Z: " + ladoZ);
-            Console.WriteLine("-------------------------------------------");
+            Console.WriteLine("-------------------------------------------\n");
 
-            Console.Write("Deseja continuar? (S/N)");
+            bool medidasTriangulosValida = 
+                ladoX + ladoY > ladoZ &&
+                ladoX + ladoZ > ladoY &&
+                ladoY + ladoZ > ladoX;
+
+            if (medidasTriangulosValida)
+                Console.WriteLine("O triângulo é válido!");
+            else
+                Console.WriteLine("Os valores informados não formam um triângulo válido!");
+
+
+            Console.Write("\nDeseja continuar? (S/N)");
             string opcaoContinuar = Console.ReadLine()!.ToUpper();
             if (opcaoContinuar != "S")
                 break;
